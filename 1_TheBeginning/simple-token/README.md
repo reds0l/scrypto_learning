@@ -1,10 +1,15 @@
 Helpful places to go when you are brand new:
+
 https://docs.radixdlt.com/main/scrypto/introduction.html
 
 Helpful places to go when you are looking for examples:
+
 https://github.com/radixdlt/radixdlt-scrypto/tree/main/examples
+
 https://github.com/cbisaillon/Scrypto-Documentation
+
 https://github.com/radixdlt/community-scrypto
+
 
 Basic flow to first deploy once on Radix Engine Simulator (resim) once you clone this is:
 ```
