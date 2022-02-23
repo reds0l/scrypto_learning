@@ -1,5 +1,5 @@
 // REALLY simple blueprint to create a new non fungible token. 
-// This does nothing but create the token based on a name, symbol, and supply passed to it.
+// This does nothing but create the token based on a name and description passed to it.
 // No mechanism for interacting with the token at all.
 use scrypto::prelude::*;
 
