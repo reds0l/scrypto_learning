@@ -20,7 +20,7 @@ export pubkey=<pubkey>
 resim publish .
 export package=<package_address>
 resim show $package
-resim call-function $package NewToken <token_name> <token_symbol> <toke_supply>
+resim call-function $package NewToken <function_name> <token_name> <token_symbol> <token_supply>
 export component=<component_address>
 resim show $component
 ```
