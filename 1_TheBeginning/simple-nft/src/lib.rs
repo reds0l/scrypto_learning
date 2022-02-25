@@ -1,6 +1,8 @@
-// REALLY simple blueprint to create a new non fungible token. 
-// This does nothing but create the token based on a name and description passed to it.
-// No mechanism for interacting with the token at all.
+////////////////////////////////////////////////////////////////////////////////////// 
+// REALLY simple blueprint to create a new nft.                                     //
+// This simply creates the nft based on a name, symbol, and supply passed to it.    //
+// The created bucket with the nft is returned and put into your account vault.     //
+//////////////////////////////////////////////////////////////////////////////////////
 use scrypto::prelude::*;
 
 #[derive(NonFungibleData)]
@@ -10,16 +12,11 @@ pub struct GenericNFT {
 }
 
 blueprint! {
-    struct NewNFT {
-        // Vault where the initial nft supply will be
-        initial_vault: Vault
-    }
-
+    struct NewNFT;
     impl NewNFT {        
-        pub fn new(name: String, description: String) -> Component {
+        pub fn new(name: String, description: String) -> Bucket {
             // Create a new nft
-            let b: Bucket = ResourceBuilder::new_non_fungible()
-                .metadata("name", "Basic NFT")
+            ResourceBuilder::new_non_fungible()
                 .initial_supply_non_fungible([
                     (
                         NonFungibleKey::from(1u128),
@@ -28,12 +25,7 @@ blueprint! {
                             description: description,
                         },
                     )
-                ]);
-
-            Self {
-                initial_vault: Vault::with_bucket(b)
-            }
-            .instantiate()
+                ])
         }
     }
 }
